@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    	<meta name="description" content="ez.day" />
+    	<meta name="author" content="neyc" />
+    	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+        <title>ez.day</title>
+        <link rel="stylesheet" href="main.css">
+
+        <!-- stupid font shit -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- HOME TAB -->
+        <section class="tab selectedt" id="hometab">
+            <div class="header">
+                <center>::before</center>
+                <span id="settings-icon"></span>
+            </div>
+        </section>
+
+        <!-- SCHOOL TAB -->
+        <section class="tab" id="schooltab">
+            <div class="header">
+                <center>sqool()</center>
+                <span id="settings-icon"></span>
+            </div>
+        </section>
+
+        <!-- CITY TAB -->
+        <section class="tab" id="citytab">
+            <div class="header">
+                <center>::after</center>
+                <span id="settings-icon"></span>
+            </div>
+        </section>
+
+        <!-- STUDY TAB -->
+        <section class="tab" id="studytab">
+            <div class="header">
+                <center>gps = home</center>
+                <span id="settings-icon"></span>
+            </div>
+        </section>
+
+        <center class="footer-holder"><div class="footer">
+            <button type="button" class="tab-button selected" id="home" onclick="switchTab('home')"></button>
+            <button type="button" class="tab-button" id="school" onclick="switchTab('school')"></button>
+            <button type="button" class="tab-button" id="city" onclick="switchTab('city')"></button>
+            <button type="button" class="tab-button" id="study" onclick="switchTab('study')"></button>
+        </div></center>
+
+        <script>
+        function switchTab(name) {
+          let button = document.getElementById(name);
+          if (!button.classList.contains('selected')) {
+            // switches button
+            document.getElementsByClassName('selected').item(0).classList.remove('selected');
+            button.classList.add('selected');
+
+            //switches tab
+            document.getElementsByClassName('selectedt').item(0).classList.remove('selectedt');
+            switch (name) {
+              case "home":
+                document.getElementById('hometab').classList.add('selectedt');
+                break;
+              case "city":
+                document.getElementById('citytab').classList.add('selectedt');
+                break;
+              case "school":
+                document.getElementById('schooltab').classList.add('selectedt');
+                break;
+              case "study":
+                document.getElementById('studytab').classList.add('selectedt');
+                break;
+              default:
+                break;
+            }
+          }
+        }
+        </script>
+    </body>
+</html>
