@@ -1,1 +1,2 @@
-# ezday
+# EasyDay
+## Streamline your day
